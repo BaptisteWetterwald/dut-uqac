@@ -72,7 +72,8 @@ Complex Complex::conjugate()
 
 Complex Complex::inverse()
 {
-	if (m_real == 0 && m_imaginary == 0) throw std::overflow_error("Cannot divide by 0.");
+	if (m_real == 0 && m_imaginary == 0)
+		throw std::overflow_error("Cannot divide by 0.");
 	float a = m_real;
 	float b = m_imaginary;
 

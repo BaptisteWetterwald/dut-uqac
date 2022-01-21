@@ -22,6 +22,7 @@ class Complex
         std::string toString();
 
         void print();
+        void print(std::string prefix);
 
     private:
         float m_real, m_imaginary;

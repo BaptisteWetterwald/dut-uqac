@@ -12,11 +12,11 @@ int main()
     //                  Init
 
     // z1 = 2 + 3i
-    Complex z1(2, 3);
+    const Complex z1(2, 3);
     z1.print("Chosen: z1 = ");
 
     // z2 = -5 + 31i
-    Complex z2(-5, 31);
+    const Complex z2(-5, 31);
 	z2.print("Chosen: z2 = ");
 
 	//               End of init
@@ -36,10 +36,10 @@ int main()
         std::cout << "Inverse of z1:\n";
         z1.inverse().print("1/z1 = ");
     }
-	catch (std::overflow_error e)
+	catch (const std::overflow_error &e)
 	{
-        std::cout << e.what();
-        std::cout << "\n\n";
+	    std::cout << e.what();
+	    std::cout << "\n\n";
 	}
 
     //Addition: z1 + z2 = -3 + 34i
@@ -60,9 +60,9 @@ int main()
         std::cout << "Division (z1 / z2):\n";
         z1.divideBy(z2).print();
     }
-    catch (std::overflow_error e)
-    {
-        std::cout << e.what();
-        std::cout << "\n\n";
-    }
+	catch (const std::overflow_error &e)
+	{
+	    std::cout << e.what();
+	    std::cout << "\n\n";
+	}
 }

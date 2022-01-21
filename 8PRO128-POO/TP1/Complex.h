@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 
 class Complex
@@ -6,23 +7,23 @@ class Complex
         Complex();
         Complex(float real, float imaginary);
 
-        float getReal();
-        float getImaginary();
+        [[nodiscard]] float getReal() const;
+        [[nodiscard]] float getImaginary() const;
 
-        Complex add(Complex complex);
-        Complex subtract(Complex complex);
+        [[nodiscard]] Complex add(Complex complex) const;
+        [[nodiscard]] Complex subtract(Complex complex) const;
 
-        Complex multiplyBy(Complex complex);
-        Complex divideBy(Complex complex);
+        [[nodiscard]] Complex multiplyBy(Complex complex) const;
+        [[nodiscard]] Complex divideBy(Complex complex) const;
 
-        Complex opposite();
-        Complex conjugate();
+        [[nodiscard]] Complex opposite() const;
+        [[nodiscard]] Complex conjugate() const;
 
-        Complex inverse();
-        std::string toString();
+        [[nodiscard]] Complex inverse() const;
+        [[nodiscard]] std::string toString() const;
 
-        void print();
-        void print(std::string prefix);
+        void print() const;
+        void print(std::string prefix) const;
 
     private:
         float m_real, m_imaginary;

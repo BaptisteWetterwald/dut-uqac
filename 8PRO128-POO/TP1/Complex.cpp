@@ -5,7 +5,7 @@
 
 Complex::Complex()
 {
-	m_real = m_imaginary = 0;
+	m_real = m_imaginary = 0.f;
 }
 
 Complex::Complex(const float real, const float imaginary)
@@ -44,7 +44,7 @@ Complex Complex::multiplyBy(const Complex complex) const
 
 Complex Complex::divideBy(const Complex complex) const
 {
-	if (!(complex.getReal() == 0 && complex.getImaginary() == 0))
+	if (!(complex.getReal() == 0.f && complex.getImaginary() == 0.f))
 	{
 		const float a = m_real;
 		const float b = m_imaginary;
@@ -72,7 +72,7 @@ Complex Complex::conjugate() const
 
 Complex Complex::inverse() const
 {
-	if (m_real == 0 && m_imaginary == 0)
+	if (m_real == 0.f && m_imaginary == 0.f)
 		throw std::overflow_error("Cannot divide by 0.");
 	const float a = m_real;
 	const float b = m_imaginary;
@@ -95,20 +95,20 @@ std::string Complex::toString() const
 {
 	std::string s;
 	
-	if (m_real == 0 && m_imaginary == 0) // a=0 & b=0
+	if (m_real == 0.f && m_imaginary == 0.f) // a=0 & b=0
 		s = "0";
 	else
 	{
 		std::string sImaginary;
 
-		const std::string sReal = m_real != 0 ? std::format("{:g}", m_real) : "";
+		const std::string sReal = m_real != 0.f ? std::format("{:g}", m_real) : "";
 
-		if (m_imaginary != 0)
+		if (m_imaginary != 0.f)
 		{
-			if (m_imaginary != -1 && m_imaginary != 1)
+			if (m_imaginary != -1.f && m_imaginary != 1.f)
 				sImaginary = (m_imaginary > 0 ? (m_real != 0 ? "+" : "") : "") + std::format("{:g}", m_imaginary);
 			else
-				sImaginary = m_imaginary == -1 ? "-" : (m_real != 0 ? "+" : "");
+				sImaginary = m_imaginary == -1.f ? "-" : (m_real != 0.f ? "+" : "");
 			sImaginary += "i";
 		}
 		

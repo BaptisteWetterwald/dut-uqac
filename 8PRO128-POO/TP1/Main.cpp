@@ -5,7 +5,7 @@ int main()
 {
     /*
      * Comments are expected results for z1 = 2+3i and z2 = -5+31i
-     * Replace z1 and z2 with the ones you want at line 15 and line 20
+     * Replace z1 and z2 with the ones you want at line 15 and line 19
     */
 
     //*****************************************

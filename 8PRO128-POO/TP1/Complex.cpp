@@ -8,11 +8,10 @@ Complex::Complex()
 	m_real = m_imaginary = 0.f;
 }
 
-Complex::Complex(const float real, const float imaginary)
-{
-	m_real = real;
-	m_imaginary = imaginary;
-}
+Complex::Complex(const float real, const float imaginary):
+	m_real{real},
+	m_imaginary{imaginary}
+{}
 
 float Complex::getReal() const
 {
@@ -83,12 +82,12 @@ Complex Complex::inverse() const
 
 void Complex::print() const
 {
-	std::cout << this->toString() + "\n\n";
+	std::cout << this->toString() << "\n\n";
 }
 
 void Complex::print(const std::string prefix) const
 {
-	std::cout << prefix + this->toString() + "\n\n";
+	std::cout << prefix << this->toString() << "\n\n";
 }
 
 std::string Complex::toString() const

@@ -38,8 +38,7 @@ int main()
     }
 	catch (const std::overflow_error &e)
 	{
-	    std::cout << e.what();
-	    std::cout << "\n\n";
+	    std::cout << e.what() << "\n\n";
 	}
 
     //Addition: z1 + z2 = -3 + 34i
@@ -62,7 +61,6 @@ int main()
     }
 	catch (const std::overflow_error &e)
 	{
-	    std::cout << e.what();
-	    std::cout << "\n\n";
+	    std::cout << e.what() << "\n\n";
 	}
 }

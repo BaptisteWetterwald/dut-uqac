@@ -82,12 +82,12 @@ Complex Complex::inverse() const
 
 void Complex::print() const
 {
-	std::cout << this->toString() << "\n\n";
+	std::cout << this->toString() << std::endl << std::endl;
 }
 
 void Complex::print(const std::string prefix) const
 {
-	std::cout << prefix << this->toString() << "\n\n";
+	std::cout << prefix << this->toString() << std::endl << std::endl;
 }
 
 std::string Complex::toString() const
